@@ -1,0 +1,16 @@
+# Forzar todos los archivos de texto a usar LF
+* text=auto eol=lf
+
+# Forzar archivos comunes a LF explícitamente
+*.sh text eol=lf
+*.py text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
+*.yml text eol=lf
+
+# Forzar archivos de imagen
+*.png binary
+*.jpg binary  

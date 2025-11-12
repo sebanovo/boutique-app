@@ -1,0 +1,65 @@
+.caja1 {
+    background-color: rgba(0, 0, 0, 0.46);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    animation: fadeIn 0.3s ease-out;
+    z-index: 1000;
+}
+
+.caja2 {
+    padding: 3rem 4rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    position: relative;
+    animation: scaleIn 0.3s ease-out;
+    max-width: 400px;
+    width: 90%;
+    transition: all 0.3s ease;
+}
+
+/* ✅ Éxito */
+.success {
+    background-color: #dcecd5;
+    border: 2px solid #3c7249;
+    color: #3c7249;
+}
+
+/* ❌ Error */
+.error {
+    background-color: #f8d7da;
+    border: 2px solid #a01e1e;
+    color: #a01e1e;
+}
+
+.h1Modal {
+    width: 120px;
+    height: 120px;
+    font-size: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem auto;
+}
+
+h2 {
+    margin: 0;
+    font-size: 1.5rem;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

@@ -1,0 +1,14 @@
+.caja1{
+    width: 100vw;
+    height: 100vh;
+    background-color:antiquewhite ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caja2{
+    background-color: red;
+    padding: 2rem;
+    border-radius: 15px;
+
+}

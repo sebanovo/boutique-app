@@ -6,7 +6,7 @@ admin.site.site_title = "boutique Admin Portal"
 admin.site.index_title = "Welcome to boutique Admin Portal"
 
 from .models import (
-    Usuario,
+    Persona,
     # Casa,
     # Vehiculo,
     # AreaComun,
@@ -16,7 +16,7 @@ from .models import (
     # Extranjero,
 )
 
-admin.site.register(Usuario)
+admin.site.register(Persona)
 # admin.site.register(Casa)
 # admin.site.register(Vehiculo)
 # admin.site.register(AreaComun)

@@ -1,0 +1,347 @@
+:root {
+    --baby-blue: #96d1f1;
+    --delft-blue: #2a3a71;
+    --midnight-blue: #26266e;
+    --ultra-violet: #55588c;
+    --periwinkle: #bdbce2;
+    --glaucous: #6587bf;
+    --gradient-main: linear-gradient(
+      135deg,
+      var(--baby-blue),
+      var(--delft-blue),
+      var(--midnight-blue)
+    );
+  }
+  
+  /* 🔤 Reset general */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  
+  /* 🌅 Fondo general */
+  .Fondo {
+    background-image: var(--gradient-main), url("../imagenes/descarga.jpeg");
+    background-blend-mode: overlay;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🔲 Capa oscura de superposición */
+  .overlay {
+    background: rgba(0, 0, 0, 0.45);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* 🧩 Contenedor central */
+  .sub {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    max-width: 450px;
+    width: 90%;
+    animation: aparecer 0.8s ease-in-out;
+  }
+  
+
+/* 📄 Contenido principal */
+.sub h1 {
+    font-size: 1.8rem;
+    color: var(--midnight-blue);
+    margin-bottom: 5px;
+}
+
+.sub hr {
+    margin: 15px 0;
+    border: none;
+    height: 2px;
+    background: var(--gradient-main);
+    border-radius: 2px;
+}
+
+/* 📅 Calendario Header */
+.calendarioHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.navButton {
+    background: var(--delft-blue); /* Cambiado de --delft-blue-2 a --delft-blue */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.navButton:hover {
+    background: var(--midnight-blue);
+    transform: scale(1.1);
+}
+
+/* Controls */
+.controlContainer {
+    margin-bottom: 10px;
+}
+
+.hoyButton {
+    background: var(--baby-blue);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.hoyButton:hover {
+    background: var(--ultra-violet);
+    transform: translateY(-2px);
+}
+
+/* 📅 Calendario Grid */
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1px;
+    margin-top: 2px;
+    margin-bottom: 20px;
+}
+
+.dia {
+    font-weight: 700;
+    color: var(--midnight-blue);
+    text-align: center;
+    padding: 10px 0;
+    background: var(--periwinkle);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.fecha {
+    position: relative;
+    text-align: center;
+    padding: 10px ;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.fecha:hover {
+    background: var(--baby-blue);
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Date States */
+.fecha.hoy {
+    background: var(--glaucous);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.fecha.seleccionado {
+    background: var(--delft-blue);
+    color: white;
+    font-weight: bold;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+
+.fecha.conEvento {
+    border-bottom: 3px solid #ff6b6b; /* Color vibrante */
+    background-color:#ff9de3b6;
+    color:#26266e;
+}
+
+.fecha.vacio {
+    background: transparent;
+    box-shadow: none;
+    cursor: default;
+}
+
+.fecha.vacio:hover {
+    background: transparent;
+    transform: none;
+    cursor: default;
+}
+
+/* Event Marker */
+.marcadorEvento {
+    position: absolute;
+    bottom: 2px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+/* Selected Date Info */
+.infoSeleccionada {
+    background: rgba(189, 188, 226, 0.2);
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.infoSeleccionada h3 {
+    color: var(--midnight-blue);
+    margin-bottom: 8px;
+    font-size: 1.1rem;
+}
+
+.infoSeleccionada p {
+    color: var(--ultra-violet);
+    margin-bottom: 10px;
+}
+
+.listaEventos h4 {
+    color: var(--delft-blue);
+    margin: 10px 0 5px 0;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.listaEventos ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.listaEventos li {
+    background: linear-gradient(135deg, #ff9de4, #a6c1ee);
+    margin: 5px 0;
+    padding: 8px 12px;
+    border-radius: 6px;
+    border-left: 3px solid var(--ultra-violet);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    animation: fadeIn 0.5s ease;
+    color: white;
+    font-weight: 500;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-10px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+.sinEventos {
+    font-style: italic;
+    color: var(--ultra-violet);
+    opacity: 0.7;
+}
+
+/* Legend */
+.leyenda {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.itemLeyenda {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+
+.marcadorLeyenda {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.marcadorLeyenda.hoy {
+    background: var(--glaucous);
+}
+
+.marcadorLeyenda.seleccionado {
+    background: var(--delft-blue);
+}
+
+.marcadorLeyenda.conEvento {
+    background: #ff6b6b; /* Mismo color vibrante que el borde */
+}
+
+/* 📜 Animación de aparición */
+@keyframes aparecer {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* 📱 Responsivo */
+@media (max-width: 480px) {
+    .Fondo {
+        padding: 10px;
+    }
+    
+    .sub {
+        padding: 20px 15px;
+    }
+
+    .sub h1 {
+        font-size: 1.5rem;
+    }
+
+    .calendarioHeader h1 {
+        font-size: 1.3rem;
+    }
+
+    .calendario {
+        gap: 3px;
+    }
+
+    .dia, .fecha {
+        padding: 2px 2px;
+        font-size: 0.4rem;
+    }
+    
+    .navButton {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+    
+    .leyenda {
+        gap: 10px;
+    }
+    
+    .itemLeyenda {
+        font-size: 0.7rem;
+    }
+}

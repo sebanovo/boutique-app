@@ -1,0 +1,104 @@
+.table {
+  width: 100%;
+  background: white;
+  border-collapse: separate;
+  border-spacing: 0 6px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  font-size: 15px;
+}
+
+.tableHeader th {
+  background: #ffffff;
+  color: #1a349b;
+  padding: 12px;
+  text-transform: uppercase;
+  font-weight: 600;
+  border-bottom: 2px solid #8a8d94;
+}
+
+td, th {
+  padding: 10px 15px;
+  text-align: left;
+}
+
+tr {
+  background: #fff;
+  transition: background 0.2s ease;
+}
+
+tr:nth-child(even) {
+  background: #f9f9fb;
+}
+
+tr:hover {
+  background: #eef2ff;
+}
+
+.textCell {
+  color: #333;
+}
+
+.imageCell {
+  max-width: 80px;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.2);
+}
+
+.barcode {
+  display: block;
+  position: relative;
+  z-index: 0;
+  margin: auto;
+}
+
+.actionsCell {
+  text-align: center;
+}
+
+/* ✅ BOTONES MEJORADOS */
+.actionsCell button {
+  margin: 3px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+}
+
+/* ✏️ EDITAR */
+.editButton {
+  background-color: #285da718;      /* Azul principal */
+  color: #285da7;
+  border: 15px solid #285da7;
+}
+
+.editButton:hover {
+  background-color: #285da7ad;      /* Azul principal */
+  color: #d7e7f5;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+/* 🗑️ ELIMINAR */
+.deleteButton {
+  background-color: #0923352d;      /* Azul oscuro / gris azulado */
+  color: #092335;
+  border: 1px solid transparent;
+}
+
+.deleteButton:hover {
+  background-color: #071e2fce;      /* Azul oscuro / gris azulado */
+  color: #d7e7f5;      /* Un poco más claro */
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.emptyState {
+  text-align: center;
+  padding: 20px;
+  color: #6c757d;
+  font-size: 15px;
+}

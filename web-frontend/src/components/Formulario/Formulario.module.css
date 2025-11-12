@@ -1,0 +1,277 @@
+/* === FORMULARIO PRINCIPAL === */
+.formulario {
+  min-width: 320px;
+  max-width: 850px;
+  width: 90%;
+  margin: auto;
+  padding: 30px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+  font-family: "Inter", "Segoe UI", sans-serif;
+  color: #1e293b;
+  max-height: 90vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+/* === TITULO === */
+.titulo {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #1e293b;
+  text-align: center;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.linea {
+  border: none;
+  border-top: 3px solid #3b82f6;
+  width: 80px;
+  margin: 0 auto 25px auto;
+  border-radius: 2px;
+}
+
+/* === INPUTS Y SELECTS === */
+.caja {
+  margin-bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #334155;
+}
+
+.input,
+select {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1.5px solid #cbd5e1;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #1e293b;
+  transition: all 0.25s ease;
+}
+
+.input:focus,
+select:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 6px rgba(59, 130, 246, 0.3);
+}
+
+/* === CHECKBOXES === */
+.checkboxContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 180px;
+  overflow-y: auto;
+  background: #f9fafb;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+
+.checkboxLabel {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.95rem;
+  color: #334155;
+  background: #fff;
+  border-radius: 8px;
+  padding: 8px 10px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.checkboxLabel:hover {
+  background: #eff6ff;
+  transform: scale(1.01);
+}
+
+.checkboxInput {
+  width: 18px;
+  height: 18px;
+  accent-color: #3b82f6;
+  cursor: pointer;
+}
+
+/* === VISTA PREVIA DE IMAGEN === */
+.previewContainer {
+  margin-top: 12px;
+  text-align: center;
+  padding: 15px;
+  background: #f8fafc;
+  border-radius: 12px;
+  border: 2px dashed #e2e8f0;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 250px;
+  border-radius: 10px;
+  object-fit: contain;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+}
+
+.removeImageButton {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.removeImageButton:hover {
+  background: #dc2626;
+  transform: translateY(-1px);
+}
+
+/* === SELECCIONES === */
+.selecciones {
+  margin-top: 12px;
+  padding: 12px;
+  background-color: #f1f5f9;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+}
+
+.selecciones strong {
+  font-size: 0.9rem;
+  color: #475569;
+  display: block;
+  margin-bottom: 6px;
+}
+
+.tagsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.tag {
+  background: #3b82f6;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: #2563eb;
+  transform: translateY(-1px);
+}
+
+.removeIcon {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0 6px;
+  border-radius: 50%;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* === BOTONES === */
+.botones {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.enviar,
+.cancelar {
+  flex: 1;
+  text-align: center;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+/* 🔵 Botón ENVIAR */
+.enviar {
+  background-color: #1f467b;
+  color: #ffffff;
+  border: 1px solid transparent;
+}
+
+.enviar:hover {
+  background-color: #1f4e8a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.enviar:disabled {
+  background-color: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* 🔘 Botón CANCELAR */
+.cancelar {
+  background-color: #e2e8f0;
+  color: #1e293b;
+  border: 1px solid #cbd5e1;
+}
+
+.cancelar:hover {
+  background-color: #cbd5e1;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* === SCROLL === */
+.formulario::-webkit-scrollbar,
+.checkboxContainer::-webkit-scrollbar {
+  width: 8px;
+}
+.formulario::-webkit-scrollbar-thumb,
+.checkboxContainer::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 10px;
+}
+.formulario::-webkit-scrollbar-thumb:hover,
+.checkboxContainer::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .formulario {
+    padding: 20px;
+    max-width: 95%;
+  }
+
+  .botones {
+    flex-direction: column;
+  }
+
+  .enviar,
+  .cancelar {
+    width: 100%;
+  }
+  
+  .previewImage {
+    max-height: 200px;
+  }
+}

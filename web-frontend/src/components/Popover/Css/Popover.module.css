@@ -1,0 +1,44 @@
+:root {
+  --color: #4463c9;
+}
+
+.boton {
+  padding: 8px 14px;
+  background: var(--color);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.boton:hover {
+  background: #3651a5;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.popover {
+  background: #fff;
+  border-radius: 10px;
+  padding: 18px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  min-width: 250px;
+  animation: aparecer 0.2s ease;
+}
+
+@keyframes aparecer {
+  from {opacity: 0; transform: scale(0.9);}
+  to {opacity: 1; transform: scale(1);}
+}
+.overlay, .modal {
+  z-index: 9999; /* encima de todo */
+  position: fixed;
+}
